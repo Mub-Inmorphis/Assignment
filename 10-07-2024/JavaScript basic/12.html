@@ -1,0 +1,27 @@
+<!-- Write a JavaScript program to get the website URL (loading page). -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>question 12</title>
+</head>
+
+<body>
+
+    <h3>Current URL</h3>
+
+    <p id="currentURL"></p>
+
+
+    <script>
+        let current = window.location.href;
+
+        document.getElementById('currentURL').innerText = "=> " + current;
+
+    </script>
+</body>
+
+</html>
