@@ -1,0 +1,64 @@
+<!-- Write a JavaScript program to calculate the area and perimeter of a circle.
+Note : Create two methods to calculate the area and perimeter. The radius of the
+circle will be supplied by the user -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Question No. 9</title>
+  </head>
+
+  <body>
+    <label for="radiusInput">Enter the radius of the circle:</label>
+    <input type="number" id="radiusInput" min="0" step="any" />
+    <button onclick="circle.calculateArea()">Calculate Area</button>
+    <button onclick="circle.calculatePerimeter()">Calculate Parimeter</button>
+
+    <br />
+    <br />
+    <div>Answer:</div>
+    <div id="ans"></div>
+
+    <script>
+      const circle = {
+        radius: 0,
+        setRadius: function (radius) {
+          this.radius = radius;
+        },
+        calculateArea: function () {
+          const radius = parseFloat(
+            document.getElementById("radiusInput").value
+          );
+          if (!isNaN(radius) && radius > 0) {
+            this.setRadius(radius);
+            const area = Math.PI * this.radius * this.radius;
+            document.getElementById(
+              "ans"
+            ).innerText = `Area of the circle: ${area.toFixed(2)}`;
+          } else {
+            document.getElementById("ans").innerText =
+              "Invalid input. Please enter a valid positive number for radius.";
+          }
+        },
+        calculatePerimeter: function () {
+          const radius = parseFloat(
+            document.getElementById("radiusInput").value
+          );
+
+          if (!isNaN(radius) && radius > 0) {
+            this.setRadius(radius);
+            const perimeter = 2 * Math.PI * this.radius;
+            document.getElementById(
+              "ans"
+            ).innerText = `Perimeter of the circle: ${perimeter.toFixed(2)}`;
+          } else {
+            document.getElementById("ans").innerText =
+              "Invalid input. Please enter a valid positive number for radius.";
+          }
+        },
+      };
+    </script>
+  </body>
+</html>
