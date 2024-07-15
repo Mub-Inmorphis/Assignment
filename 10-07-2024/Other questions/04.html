@@ -1,0 +1,35 @@
+<!-- Create an HTML page. Add a JavaScript function to convert local time and
+date to UTC and display the result. Add a button to your page that calls this
+function. Add JavaScript to create a timer that displays the current date and
+time after a specified amount of time delay. Use a button (or other event) to
+call the timer function -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Time to UTC Conversion</title>
+</head>
+<body>
+    <div id="localTime"></div>
+    <button onclick="convertToLocalTime()">Convert to UTC</button>
+
+    <script>
+        function convertToLocalTime() {
+            let now = new Date();
+            let utcString = now.toISOString();
+            alert(`Local time: ${now}\nUTC time: ${utcString}`);
+        }
+
+        function displayCurrentTime() {
+            let now = new Date();
+            document.getElementById('localTime').textContent = now.toLocaleString();
+        }
+
+        displayCurrentTime();
+
+        setInterval(displayCurrentTime, 1000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!-- Create an HTML page that includes 2 paragraphs of text. Add JavaScript to
+insert a new paragraph in between the other 2. Add JavaScript to use an event
+to change the style of the new paragraph using either the style property or the
+className property. Add JavaScript to use an event to change the style of the
+new paragraph back to the original. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Insert and Style Paragraphs</title>
+  </head>
+  <body>
+    <p>This is the first paragraph.</p>
+    <p>This is the second paragraph.</p>
+
+    <button onclick="insertNewParagraph()">Insert New Paragraph</button>
+
+    <script>
+      function insertNewParagraph() {
+        let newParagraph = document.createElement("p");
+        newParagraph.textContent =
+          "This is a new paragraph inserted between the existing ones.";
+        newParagraph.style.color = "red";
+        document.body.insertBefore(
+          newParagraph,
+          document.getElementsByTagName("p")[1]
+        );
+      }
+    </script>
+  </body>
+</html>

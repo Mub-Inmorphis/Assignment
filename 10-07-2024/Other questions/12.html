@@ -1,0 +1,71 @@
+<!-- Create a basic page in html that displays 2 images. When the user
+places a cursor over any image, replace the image with a different image.
+When the user removes the cursor from the image and return it to its
+original state. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Hover Change</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        text-align: center;
+      }
+      .image-container {
+        display: inline-block;
+        margin: 20px;
+      }
+      .image-container img {
+        width: 200px;
+        height: 200px;
+        transition: transform 0.3s ease;
+      }
+      .image-container img:hover {
+        transform: scale(1.1);
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="image-container"
+      onmouseover="changeImage(1)"
+      onmouseout="restoreImage(1)"
+    >
+      <img
+        src="https://via.placeholder.com/200"
+        alt="Original Image 1"
+        id="image1"
+      />
+    </div>
+
+    <div
+      class="image-container"
+      onmouseover="changeImage(2)"
+      onmouseout="restoreImage(2)"
+    >
+      <img
+        src="https://via.placeholder.com/200"
+        alt="Original Image 2"
+        id="image2"
+      />
+    </div>
+
+    <script>
+      function changeImage(id) {
+        const image = document.getElementById(`image${id}`);
+        image.src = `https://via.placeholder.com/200/FF5733/FFFFFF?text=Image${id}`;
+      }
+
+      function restoreImage(id) {
+        const image = document.getElementById(`image${id}`);
+        image.src = `https://via.placeholder.com/200`;
+      }
+    </script>
+  </body>
+</html>

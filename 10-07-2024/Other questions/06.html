@@ -1,0 +1,27 @@
+<!-- Reconfigure the previous question to execute using a function. Specifically,
+when the user clicks on the button, the onClick event handler calls a function.
+The function then executes the statement that changes the background color
+to blue. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Change Background Color on Click</title>
+    <style>
+      body {
+        transition: background-color 0.5s;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="changeBackgroundColor()">Change Background Color</button>
+
+    <script>
+      function changeBackgroundColor() {
+        document.body.style.backgroundColor = "blue";
+      }
+    </script>
+  </body>
+</html>

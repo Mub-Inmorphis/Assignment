@@ -1,0 +1,25 @@
+<!-- Create an HTML page. Add JavaScript that includes 2 prompts for integer
+values from the user. Add JavaScript to add these 2 values together and
+display the result in an alert box. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Addition of Two Integers</title>
+  </head>
+  <body>
+    <h3>Add two number</h3>
+    <button onclick="add2Number()">Start</button>
+    <script>
+      function add2Number() {
+        let num1 = parseInt(prompt("Enter the first integer:"));
+        let num2 = parseInt(prompt("Enter the second integer:"));
+        let sum = num1 + num2;
+
+        alert(`The sum of ${num1} and ${num2} is ${sum}`);
+      }
+    </script>
+  </body>
+</html>

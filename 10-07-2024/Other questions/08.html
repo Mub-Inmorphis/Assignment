@@ -1,0 +1,83 @@
+<!-- Create a slide show of 5 images. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Slideshow</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+    .slideshow-container {
+      max-width: 800px;
+      position: relative;
+      margin: auto;
+      overflow: hidden;
+      border: 1px solid #ccc;
+    }
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+    .slide {
+      min-width: 100%;
+      display: none; 
+    }
+    .slide.active {
+      display: block; 
+    }
+    img {
+      width: 100%;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+  <div class="slideshow-container">
+    <div class="slides">
+      <div class="slide active">
+        <img src="https://picsum.photos/id/3/800/600" alt="Slide 1" />
+      </div>
+      <div class="slide">
+        <img src="https://picsum.photos/id/2/800/600" alt="Slide 2" />
+      </div>
+      <div class="slide">
+        <img src="https://picsum.photos/id/5/800/600" alt="Slide 3" />
+      </div>
+      <div class="slide">
+        <img src="https://picsum.photos/id/7/800/600" alt="Slide 4" />
+      </div>
+      <div class="slide">
+        <img src="https://picsum.photos/id/1/800/600" alt="Slide 5" />
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let slideIndex = 0; 
+    let slides = document.getElementsByClassName("slide");
+
+    function showSlides() {
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].classList.remove('active');
+      }
+
+      slideIndex++;
+      if (slideIndex >= slides.length) {
+        slideIndex = 0; 
+      }
+
+      slides[slideIndex].classList.add('active');
+
+      setTimeout(showSlides, 1000);
+    }
+
+    showSlides();
+  </script>
+</body>
+</html>

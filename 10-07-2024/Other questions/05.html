@@ -1,0 +1,27 @@
+<!-- Create a basic page in html that consists of one image. Using the onClick
+event handler, when the user clicks on the image, change it to a unique image -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Change Image on Click</title>
+  </head>
+  <body>
+    <img
+      src="https://www.shutterstock.com/image-illustration/luffy-sun-god-nika-wallpaper-600nw-2310619235.jpg"
+      id="myImage"
+      width="500"
+      height="300"
+      onclick="changeImage()"
+    />
+
+    <script>
+      function changeImage() {
+        document.getElementById("myImage").src =
+          "https://wallpapers.com/images/featured/roronoa-zoro-hfxnwuxph7uv5tsu.jpg";
+      }
+    </script>
+  </body>
+</html>
