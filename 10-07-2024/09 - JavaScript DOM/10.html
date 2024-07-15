@@ -1,0 +1,20 @@
+<!-- Write a JavaScript program to calculate the volume of a sphere.
+Sample Output of the form : -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Calculate the volume of a sphere</title>
+  </head>
+  <body>
+    <button onclick="calculateVolume()">Calculate Volume of Sphere</button>
+    <script>
+      function calculateVolume() {
+        var radius = parseFloat(prompt("Enter the radius of the sphere:"));
+        var volume = (4 / 3) * Math.PI * Math.pow(radius, 3);
+        alert("Volume of the sphere: " + volume.toFixed(2));
+      }
+    </script>
+  </body>
+</html>

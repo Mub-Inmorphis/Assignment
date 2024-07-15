@@ -1,0 +1,48 @@
+<!-- Write a JavaScript program to highlight the bold words of the following
+paragraph, on mouse over a certain link.
+Sample link and text :
+[On mouse over here bold words of the following paragraph will be highlighted]
+We have just started this section for the users (beginner to intermediate)
+who want to work with various JavaScript problems and write scripts online
+to test their JavaScript skill. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Highlight bold words on mouse over</title>
+  <style>
+    .highlight {
+      font-weight: bold;
+    }
+    .normal {
+      font-weight: normal;
+    }
+  </style>
+</head>
+<body>
+  <a href="#" onmouseover="highlightBoldWords()" onmouseout="normalBoldWords()">On mouse over here bold words of the following paragraph will be highlighted</a>
+  <p>
+    <span>We</span> have just started <span>this</span> section for the users (<span>beginner</span> to intermediate)
+    who <span>want</span> to work with <span>various</span> JavaScript <span>problems</span> and write scripts online
+    to <span>test</span> their JavaScript <span>skill</span>.
+  </p>
+
+  <script>
+    function highlightBoldWords() {
+      var spans = document.getElementsByTagName('span');
+      for (var i = 0; i < spans.length; i++) {
+        spans[i].classList.remove('normal');
+        spans[i].classList.add('highlight');
+      }
+    }
+    function normalBoldWords() {
+      var spans = document.getElementsByTagName('span');
+      for (var i = 0; i < spans.length; i++) {
+        spans[i].classList.remove('highlight');
+        spans[i].classList.add('normal');
+      }
+    }
+  </script>
+</body>
+</html>

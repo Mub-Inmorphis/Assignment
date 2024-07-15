@@ -1,0 +1,21 @@
+<!-- Write a JavaScript program to get the width and height of the window (any
+time the window is resized). -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Get window width and height</title>
+  </head>
+  <body>
+    <div>Hello Inmorphis</div>
+    <script>
+      window.onresize = displayWindowSize;
+      function displayWindowSize() {
+        var w = document.documentElement.clientWidth;
+        var h = document.documentElement.clientHeight;
+        alert("Width: " + w + ", Height: " + h);
+      }
+    </script>
+  </body>
+</html>
