@@ -1,0 +1,131 @@
+<!-- // Write a JavaScript program which compute, the average marks of the following
+// students Then, this average is used to determine the corresponding grade.
+// Student Name Marks
+// David 80
+// Vinoth 77
+// Divya 88
+// Ishitha 95
+// Thomas 68
+// The grades are computed as follows :
+// Range Grade
+// <60 F
+// <70 D
+// <80 C
+// <90 B
+// <100 A -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Grades</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      text-align: center;
+    }
+    table {
+      margin: auto;
+      width: 50%;
+      margin-bottom: 20px;
+      border-collapse: collapse;
+    }
+    table, th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <h2>Student Grades</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Student Name</th>
+        <th>Marks</th>
+        <th>Grade</th>
+      </tr>
+    </thead>
+    <tbody id="studentTableBody">
+      <tr>
+        <td>David</td>
+        <td>80</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Vinoth</td>
+        <td>77</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Divya</td>
+        <td>88</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Ishitha</td>
+        <td>95</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Thomas</td>
+        <td>68</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button onclick="computeGrades()">Compute Grades</button>
+
+  <script>
+    function computeGrades() {
+      let students = [
+        { name: "David", marks: 80 },
+        { name: "Vinoth", marks: 77 },
+        { name: "Divya", marks: 88 },
+        { name: "Ishitha", marks: 95 },
+        { name: "Thomas", marks: 68 }
+      ];
+
+      let tableBody = document.getElementById("studentTableBody");
+      tableBody.innerHTML = "";
+
+      let totalMarks = 0;
+
+      students.forEach(student => {
+        totalMarks += student.marks;
+
+        let grade;
+        if (student.marks < 60) {
+          grade = "F";
+        } else if (student.marks < 70) {
+          grade = "D";
+        } else if (student.marks < 80) {
+          grade = "C";
+        } else if (student.marks < 90) {
+          grade = "B";
+        } else {
+          grade = "A";
+        }
+
+        let row = tableBody.insertRow();
+        let nameCell = row.insertCell(0);
+        let marksCell = row.insertCell(1);
+        let gradeCell = row.insertCell(2);
+
+        nameCell.textContent = student.name;
+        marksCell.textContent = student.marks;
+        gradeCell.textContent = grade;
+      });
+    }
+  </script>
+</body>
+</html>
+
